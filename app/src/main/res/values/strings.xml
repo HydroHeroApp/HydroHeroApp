@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">HydroHeroApp</string>
+    <string name="icon_water">Icon water</string>
+    <string name="hydrohero">HydroHero</string>
+    <string name="hi_welcome_back">Hi, Welcome Back</string>
+    <string name="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit.</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="don_t_have_an_account">Don’t have an account?</string>
+    <string name="hello_join_us">Hello Join Us!</string>
+    <string name="username">Username</string>
+    <string name="username_hint">Enter your username</string>
+    <string name="email_hint">Enter your email</string>
+    <string name="password_hint">Enter your password</string>
+    <string name="already_have_an_account">Already have an account?</string>
 </resources>
