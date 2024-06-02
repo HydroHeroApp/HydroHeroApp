@@ -17,7 +17,9 @@
         android:contentDescription="@string/icon_water"
         android:src="@drawable/icon_water"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:alpha="0"
+        tools:alpha="100"/>
 
     <TextView
         android:id="@+id/tv_title"
@@ -29,7 +31,9 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/image_view"
         app:layout_constraintStart_toEndOf="@+id/image_view"
-        app:layout_constraintTop_toTopOf="@+id/image_view" />
+        app:layout_constraintTop_toTopOf="@+id/image_view"
+        android:alpha="0"
+        tools:alpha="100"/>
 
     <TextView
         android:id="@+id/tv_welcome"
@@ -44,10 +48,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image_view" />
+        app:layout_constraintTop_toBottomOf="@+id/image_view"
+        android:alpha="0"
+        tools:alpha="100"/>
 
     <TextView
-        android:id="@+id/tv_text"
+        android:id="@+id/tv_message"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -60,7 +66,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_welcome" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_welcome"
+        android:alpha="0"
+        tools:alpha="100"/>
 
     <TextView
         android:id="@+id/tv_email"
@@ -75,7 +83,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_text" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_message"
+        android:alpha="0"
+        tools:alpha="100"/>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til_email"
@@ -88,10 +98,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_email"
-        app:startIconDrawable="@drawable/ic_baseline_email_24">
+        app:startIconDrawable="@drawable/ic_baseline_email_24"
+        android:alpha="0"
+        tools:alpha="100">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/tie_email"
+        <com.example.hydroheroapp.view.custoview.MyEditText
+            android:id="@+id/ed_login_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -114,7 +126,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/til_email" />
+        app:layout_constraintTop_toBottomOf="@+id/til_email"
+        android:alpha="0"
+        tools:alpha="100"/>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til_password"
@@ -129,10 +143,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_password"
         app:startIconDrawable="@drawable/ic_baseline_lock_24"
+        android:alpha="0"
         tools:alpha="100">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/passwordEditText"
+        <com.example.hydroheroapp.view.custoview.MyEditText
+            android:id="@+id/ed_login_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -155,7 +170,9 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/til_password" />
+        app:layout_constraintTop_toBottomOf="@+id/til_password"
+        android:alpha="0"
+        tools:alpha="100"/>
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -168,12 +185,15 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <TextView
+            android:id="@+id/tv_dont_have_an_account"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="5dp"
             android:fontFamily="@font/poppins_semibold"
             android:text="@string/don_t_have_an_account"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:alpha="0"
+            tools:alpha="100"/>
 
         <TextView
             android:id="@+id/tv_register"
@@ -182,7 +202,9 @@
             android:fontFamily="@font/poppins_semibold"
             android:text="@string/register"
             android:textColor="@color/my_blue_color"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:alpha="0"
+            tools:alpha="100"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

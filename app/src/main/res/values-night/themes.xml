@@ -3,6 +3,7 @@
     <style name="Base.Theme.HydroHeroApp" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="android:statusBarColor">@color/md_theme_scrim</item>
         <item name="colorPrimary">@color/md_theme_primary_dark</item>
         <item name="colorOnPrimary">@color/md_theme_onPrimary_dark</item>
         <item name="colorPrimaryContainer">@color/md_theme_primaryContainer_dark</item>
