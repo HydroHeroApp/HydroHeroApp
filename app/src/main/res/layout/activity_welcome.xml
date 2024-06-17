@@ -8,15 +8,7 @@
     tools:context=".view.welcome.WelcomeActivity">
 
     <ImageView
-        android:id="@+id/image_view_shape"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/shape"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/image_view_welcome"
+        android:id="@+id/image_view"
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:src="@drawable/welcome"
@@ -32,49 +24,67 @@
         android:layout_marginTop="22dp"
         android:fontFamily="@font/poppins_semibold"
         android:text="@string/welcome_to_hydrohero"
-        android:textSize="20sp"
-        android:textAlignment="center"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
-        app:layout_constraintTop_toBottomOf="@+id/image_view_welcome" />
+        android:gravity="center"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_view"
+        android:alpha="0"
+        tools:alpha="100"/>
 
     <TextView
-        android:id="@+id/tv_description"
+        android:id="@+id/tv_desc_hydro"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/desc_hydro"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
-        android:textAlignment="center"
+        android:gravity="center"
         android:fontFamily="@font/poppins_regular"
         android:textSize="14sp"
-        android:layout_marginTop="22dp"
-        app:layout_constraintTop_toBottomOf="@+id/tv_welcome"/>
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_welcome"
+        android:alpha="0"
+        tools:alpha="100"/>
 
     <Button
         android:id="@+id/btn_login"
-        android:layout_width="match_parent"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
         android:layout_marginTop="22dp"
-        android:layout_marginEnd="24dp"
-        android:background="@drawable/button"
+        android:layout_marginBottom="180dp"
+        android:background="@drawable/custom_button"
         android:fontFamily="@font/poppins_semibold"
+        android:gravity="center"
         android:text="@string/login"
         android:textSize="14sp"
-        app:layout_constraintTop_toBottomOf="@+id/tv_description" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_register"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_desc_hydro"
+        android:alpha="0"
+        tools:alpha="100"/>
 
     <Button
         android:id="@+id/btn_register"
-        android:layout_width="match_parent"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="22dp"
-        android:layout_marginEnd="24dp"
-        android:background="@drawable/button"
+        android:layout_marginBottom="180dp"
+        android:background="@drawable/custom_button"
         android:fontFamily="@font/poppins_semibold"
+        android:gravity="center"
         android:text="@string/register"
         android:textSize="14sp"
-        app:layout_constraintTop_toBottomOf="@+id/btn_login" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_login"
+        app:layout_constraintTop_toBottomOf="@+id/tv_desc_hydro"
+        android:alpha="0"
+        tools:alpha="100"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

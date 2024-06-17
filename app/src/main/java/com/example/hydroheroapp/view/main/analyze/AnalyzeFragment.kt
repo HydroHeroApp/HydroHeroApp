@@ -1,40 +1,38 @@
 package com.example.hydroheroapp.view.main.analyze
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import com.example.hydroheroapp.R
+import androidx.fragment.app.Fragment
 import com.example.hydroheroapp.databinding.FragmentAnalyzeBinding
+import com.example.hydroheroapp.view.main.result.ResultActivity
 
 class AnalyzeFragment : Fragment() {
-    private  var _binding: FragmentAnalyzeBinding? =null
+
+    private var _binding: FragmentAnalyzeBinding? = null
+
     private val binding get() = _binding!!
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
+    ): View {
         _binding = FragmentAnalyzeBinding.inflate(inflater, container, false)
+        val root: View = binding.root
 
-        return binding.root
+        binding.btnAnalyze.setOnClickListener {
+            val intent = Intent(activity, ResultActivity::class.java)
+            startActivity(intent)
+        }
+
+        return root
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
-
-    override fun onResume() {
-        super.onResume()
-        val gender = resources.getStringArray(R.array.gender)
-        val arrayAdapter = ArrayAdapter(requireContext(), R.layout.dropdown_item, gender)
-        binding.autoCompleteTextview.setAdapter(arrayAdapter)
-    }
-
-
-
 }

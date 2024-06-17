@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.hydroheroapp.view.main.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_reminder"
+        android:name="com.example.hydroheroapp.view.main.reminder.ReminderFragment"
+        android:label="@string/title_reminder"
+        tools:layout="@layout/fragment_reminder" />
+
+    <fragment
+        android:id="@+id/navigation_analyze"
+        android:name="com.example.hydroheroapp.view.main.analyze.AnalyzeFragment"
+        android:label="@string/title_analyze"
+        tools:layout="@layout/fragment_analyze" />
+
+    <fragment
+        android:id="@+id/navigation_history"
+        android:name="com.example.hydroheroapp.view.main.history.HistoryFragment"
+        android:label="@string/title_history"
+        tools:layout="@layout/fragment_history" />
+</navigation>

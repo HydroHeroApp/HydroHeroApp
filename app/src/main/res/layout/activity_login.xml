@@ -9,66 +9,46 @@
 
     <ImageView
         android:id="@+id/image_view"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="120dp"
-        android:layout_marginEnd="24dp"
-        android:contentDescription="@string/icon_water"
-        android:src="@drawable/icon_water"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/ic_signin"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:alpha="0"
-        tools:alpha="100"/>
-
-    <TextView
-        android:id="@+id/tv_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:fontFamily="@font/poppins_semibold"
-        android:text="@string/hydrohero"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/image_view"
-        app:layout_constraintStart_toEndOf="@+id/image_view"
-        app:layout_constraintTop_toTopOf="@+id/image_view"
-        android:alpha="0"
-        tools:alpha="100"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tv_welcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="22dp"
         android:layout_marginEnd="24dp"
-        android:fontFamily="@font/poppins_bold"
+        android:alpha="0"
+        android:fontFamily="@font/poppins_semibold"
         android:text="@string/hi_welcome_back"
-        android:textSize="24sp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/image_view"
-        android:alpha="0"
-        tools:alpha="100"/>
+        tools:alpha="100" />
 
     <TextView
         android:id="@+id/tv_message"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="22dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
-        android:fontFamily="@font/poppins_medium"
-        android:text="@string/lorem"
-        android:textColor="@color/my_grey_color"
+        android:alpha="0"
+        android:fontFamily="@font/poppins_regular"
+        android:text="@string/info_login"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_welcome"
-        android:alpha="0"
-        tools:alpha="100"/>
+        tools:alpha="100" />
 
     <TextView
         android:id="@+id/tv_email"
@@ -77,15 +57,15 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="22dp"
         android:layout_marginEnd="24dp"
-        android:fontFamily="@font/poppins_semibold"
+        android:alpha="0"
+        android:fontFamily="@font/poppins_regular"
         android:text="@string/email"
-        android:textSize="16sp"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_message"
-        android:alpha="0"
-        tools:alpha="100"/>
+        tools:alpha="100" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til_email"
@@ -94,12 +74,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
+        android:alpha="0"
         app:hintEnabled="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_email"
         app:startIconDrawable="@drawable/ic_baseline_email_24"
-        android:alpha="0"
         tools:alpha="100">
 
         <com.example.hydroheroapp.view.custoview.MyEditText
@@ -107,9 +87,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:fontFamily="@font/poppins_regular"
             android:hint="@string/email_hint"
             android:inputType="textEmailAddress"
-            android:paddingStart="50dp"
+            android:padding="14dp"
+            android:textSize="14sp"
             tools:ignore="SpeakableTextPresentCheck" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -120,15 +102,15 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="22dp"
         android:layout_marginEnd="24dp"
-        android:fontFamily="@font/poppins_semibold"
+        android:alpha="0"
+        android:fontFamily="@font/poppins_regular"
         android:text="@string/password"
-        android:textSize="16sp"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/til_email"
-        android:alpha="0"
-        tools:alpha="100"/>
+        tools:alpha="100" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til_password"
@@ -137,13 +119,13 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
+        android:alpha="0"
         app:endIconMode="password_toggle"
         app:hintEnabled="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_password"
         app:startIconDrawable="@drawable/ic_baseline_lock_24"
-        android:alpha="0"
         tools:alpha="100">
 
         <com.example.hydroheroapp.view.custoview.MyEditText
@@ -151,9 +133,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:fontFamily="@font/poppins_regular"
             android:hint="@string/password_hint"
             android:inputType="textPassword"
-            android:paddingStart="50dp"
+            android:padding="14dp"
+            android:textSize="14sp"
             tools:ignore="SpeakableTextPresentCheck" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -161,18 +145,20 @@
         android:id="@+id/btn_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
+        android:layout_marginStart="22dp"
         android:layout_marginTop="22dp"
-        android:layout_marginEnd="24dp"
-        android:background="@drawable/button"
+        android:layout_marginEnd="22dp"
+        android:layout_marginBottom="180dp"
+        android:alpha="0"
+        android:background="@drawable/custom_button"
         android:fontFamily="@font/poppins_semibold"
+        android:gravity="center"
         android:text="@string/login"
-        android:textSize="16sp"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/til_password"
-        android:alpha="0"
-        tools:alpha="100"/>
+        tools:alpha="100" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -189,22 +175,30 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="5dp"
-            android:fontFamily="@font/poppins_semibold"
-            android:text="@string/don_t_have_an_account"
-            android:textSize="16sp"
             android:alpha="0"
-            tools:alpha="100"/>
+            android:fontFamily="@font/poppins_regular"
+            android:text="@string/don_t_have_an_account"
+            android:textSize="14sp"
+            tools:alpha="100" />
 
         <TextView
             android:id="@+id/tv_register"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins_semibold"
-            android:text="@string/register"
-            android:textColor="@color/my_blue_color"
-            android:textSize="16sp"
             android:alpha="0"
-            tools:alpha="100"/>
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/register"
+            android:textSize="14sp"
+            tools:alpha="100" />
     </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
