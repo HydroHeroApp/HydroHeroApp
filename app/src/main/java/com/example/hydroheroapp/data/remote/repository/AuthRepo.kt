@@ -7,6 +7,8 @@ import com.example.hydroheroapp.data.remote.retrofit.ApiService
 import com.google.gson.Gson
 import retrofit2.HttpException
 import com.example.hydroheroapp.data.Result
+import com.example.hydroheroapp.data.remote.response.Analyze
+import com.example.hydroheroapp.data.remote.response.ModelResponse
 import com.example.hydroheroapp.data.remote.response.User
 
 class AuthRepo(
@@ -50,6 +52,29 @@ class AuthRepo(
             emit(Result.Error(e.message.toString()))
         }
     }
+
+    fun prdeiction(
+        height: String,
+        ch20: String,
+        weight: String,
+        gender: String,
+        age: String,
+        faf: String
+    ): LiveData<Result<ModelResponse>> =
+        liveData {
+            emit(Result.Loading)
+            try {
+                val response = apiService.analyze(height, ch20, weight, gender, age, faf)
+                emit(Result.Success(response))
+            } catch (e: HttpException) {
+                val jsonInString = e.response()?.errorBody()?.string()
+                val error = Gson().fromJson(jsonInString, ModelResponse::class.java)
+                emit(Result.Error(error.predict.toString()))
+            } catch (e: Exception) {
+                emit(Result.Error(e.message.toString()))
+            }
+
+        }
 
     companion object {
         @Volatile

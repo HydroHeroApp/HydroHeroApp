@@ -3,6 +3,8 @@ package com.example.hydroheroapp.data.remote.response
 import com.google.gson.annotations.SerializedName
 
 data class User(
+    @field:SerializedName("profile")
+    val profile: Any? = null,
 
     @field:SerializedName("createdAt")
     val createdAt: String? = null,

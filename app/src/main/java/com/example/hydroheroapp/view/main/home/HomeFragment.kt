@@ -1,38 +1,47 @@
 package com.example.hydroheroapp.view.main.home
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import com.example.hydroheroapp.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
+        inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
-
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+        return binding.root
+    }
 
-        val textView: TextView = binding.textHome
-        homeViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val sharedPreferences =
+            requireContext().getSharedPreferences("HydroHeroPrefs", Context.MODE_PRIVATE)
+        val savedIntake = sharedPreferences.getInt("currentIntake", 0)
+        val savedTarget = sharedPreferences.getInt("totalIntake", 3000)
+
+        binding.waterIntakeView.setIntake(savedIntake)
+        binding.waterIntakeView.setTotalIntake(savedTarget)
+
+        binding.btnAdd.setOnClickListener {
+            val amountToAdd = binding.etAddAmount.text.toString().toIntOrNull()
+            if (amountToAdd != null && amountToAdd > 0) {
+                binding.waterIntakeView.addIntake(amountToAdd)
+                Toast.makeText(context, "$amountToAdd ml added", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(context, "Invalid input", Toast.LENGTH_SHORT).show()
+            }
         }
-        return root
     }
 
     override fun onDestroyView() {

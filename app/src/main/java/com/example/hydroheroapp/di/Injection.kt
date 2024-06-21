@@ -11,10 +11,10 @@ import kotlinx.coroutines.runBlocking
 object Injection {
     fun provideRepository(context: Context): AuthRepo {
         val pref = LoginPrefsRepo.getInstance(context.dataStore)
-        val email = runBlocking {
+        val token = runBlocking {
             pref.getToken().first()
         }
-        val apiService = ApiConfig.getApiService(email.toString())
-        return AuthRepo.getInstance(apiService, pref,)
+        val apiService = ApiConfig.getApiService(token.toString())
+        return AuthRepo.getInstance(apiService, pref)
     }
 }

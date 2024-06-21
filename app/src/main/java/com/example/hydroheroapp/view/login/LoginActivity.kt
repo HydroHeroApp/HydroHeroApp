@@ -12,15 +12,13 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.ViewModelProvider
 import com.example.hydroheroapp.R
+import com.example.hydroheroapp.data.Result
 import com.example.hydroheroapp.data.remote.repository.LoginPrefsRepo
 import com.example.hydroheroapp.data.remote.repository.dataStore
 import com.example.hydroheroapp.databinding.ActivityLoginBinding
 import com.example.hydroheroapp.view.ViewModelFactory
 import com.example.hydroheroapp.view.main.MainActivity
 import com.example.hydroheroapp.view.register.RegisterActivity
-import com.example.hydroheroapp.data.Result
-
-
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
@@ -44,7 +42,7 @@ class LoginActivity : AppCompatActivity() {
                 this,
                 LoginPrefsRepo.getInstance(dataStore)
             )
-        val viewModel: LoginViewModel = ViewModelProvider(this,factory)[LoginViewModel::class.java]
+        val viewModel: LoginViewModel = ViewModelProvider(this, factory)[LoginViewModel::class.java]
 
         binding.tvRegister.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
@@ -58,9 +56,11 @@ class LoginActivity : AppCompatActivity() {
                 email.isEmpty() -> {
                     binding.edLoginEmail.error = getString(R.string.input_email)
                 }
+
                 password.isEmpty() -> {
                     binding.edLoginPassword.error = getString(R.string.input_password)
                 }
+
                 else -> {
                     viewModel.login(email, password).observe(this) {
                         if (it != null) {
@@ -68,25 +68,35 @@ class LoginActivity : AppCompatActivity() {
                                 is Result.Loading -> {
                                     binding.progressBar.visibility = View.VISIBLE
                                 }
+
                                 is Result.Success -> {
                                     binding.progressBar.visibility = View.GONE
                                     val response = it.data
                                     viewModel.saveState(response.email.toString())
                                     AlertDialog.Builder(this).apply {
                                         setTitle(getString(R.string.success))
-                                        setMessage(getString(R.string.welcome_back) +" " + "${response.username}")
+                                        setMessage(getString(R.string.welcome_back) + " " + "${response.username}")
                                         setPositiveButton(getString(R.string.continue_dialog)) { _, _ ->
-                                            startActivity(Intent(this@LoginActivity, MainActivity::class.java))
+                                            val intent =
+                                                Intent(this@LoginActivity, MainActivity::class.java)
+                                            intent.flags =
+                                                Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                                            startActivity(intent)
                                         }
                                         create()
                                         show()
                                     }.apply {
                                         setOnCancelListener {
-                                            startActivity(Intent(this@LoginActivity, MainActivity::class.java))
+                                            val intent =
+                                                Intent(this@LoginActivity, MainActivity::class.java)
+                                            intent.flags =
+                                                Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                                            startActivity(intent)
                                         }
                                         show()
                                     }
                                 }
+
                                 is Result.Error -> {
                                     binding.progressBar.visibility = View.GONE
                                     AlertDialog.Builder(this).apply {
@@ -103,7 +113,6 @@ class LoginActivity : AppCompatActivity() {
                 }
             }
         }
-
     }
 
     private fun playAnimation() {
@@ -122,16 +131,13 @@ class LoginActivity : AppCompatActivity() {
         val passwordInput =
             ObjectAnimator.ofFloat(binding.tilPassword, View.ALPHA, 1f).setDuration(100)
         val btnLogin = ObjectAnimator.ofFloat(binding.btnLogin, View.ALPHA, 1f).setDuration(100)
-        val dontHaveAccount = ObjectAnimator.ofFloat(binding.tvDontHaveAnAccount, View.ALPHA, 1f)
-            .setDuration(100)
+        val dontHaveAccount =
+            ObjectAnimator.ofFloat(binding.tvDontHaveAnAccount, View.ALPHA, 1f).setDuration(100)
         val registerText =
             ObjectAnimator.ofFloat(binding.tvRegister, View.ALPHA, 1f).setDuration(100)
 
         val together = AnimatorSet().apply {
-            playTogether(
-                dontHaveAccount,
-                registerText
-            )
+            playTogether(dontHaveAccount, registerText)
         }
 
         AnimatorSet().apply {

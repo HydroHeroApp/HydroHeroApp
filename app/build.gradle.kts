@@ -17,7 +17,7 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
-        buildConfigField("String", "BASE_URL", "\"https://hydrohero-backend-api-7xls4vqcza-et.a.run.app/api/\"")
+        buildConfigField("String", "BASE_URL", "\"https://backend-hydrohero-7xls4vqcza-et.a.run.app/api/\"")
     }
 
     buildTypes {

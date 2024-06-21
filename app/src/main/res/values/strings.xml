@@ -1,12 +1,14 @@
 <resources>
-    <string name="app_name">HydroHero</string>
-    <string name="hi_welcome_back">Hi, Welcome Back</string>
-    <string name="info_login">Silakan login dengan informasi Anda.</string>
-    <string name="info_regist">Lengkapi data Anda di bawah ini.</string>
-    <string name="email">Email</string>
-    <string name="password">Password</string>
+    <string name="welcome">Welcome to HydroHero!</string>
+    <string name="description">Discover the best way to keep your body hydrated with HydroHero.</string>
     <string name="login">Login</string>
     <string name="register">Register</string>
+    <string name="app_name">HydroHero</string>
+    <string name="hi_welcome_back">Hi, Welcome Back</string>
+    <string name="info_login">Please log in with your information.</string>
+    <string name="info_regist">Complete your data below.</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
     <string name="don_t_have_an_account">Don’t have an account?</string>
     <string name="hello_join_us">Hello Join Us!</string>
     <string name="username">Username</string>
@@ -14,13 +16,10 @@
     <string name="email_hint">Enter your email</string>
     <string name="password_hint">Enter your password</string>
     <string name="already_have_an_account">Already have an account?</string>
-
     <string name="title_home">Home</string>
-
     <string name="invalid_email">Invalid Email</string>
     <string name="invalid_password">Invalid Password</string>
-    <string name="welcome_to_hydrohero">Selamat Datang di HydroHero!</string>
-    <string name="desc_hydro">Temukan cara terbaik untuk menjaga tubuh Anda tetap terhidrasi dengan HydroHero</string>
+    <string name="analysis_results">Analysis Results</string>
     <string name="success">Success</string>
     <string name="continue_dialog">Continue</string>
     <string name="error">Error</string>
@@ -37,15 +36,14 @@
     <string name="age_hint">Enter your age</string>
     <string name="female">Female</string>
     <string name="male">Male</string>
-    <string name="body_weight">Body Weight</string>
+    <string name="body_weight">Body Weight (kg)</string>
     <string name="body_weight_hint">Enter your body weight</string>
-    <string name="body_heiight">Body Height</string>
+    <string name="body_heiight">Body Height (cm)</string>
     <string name="body_height_hint">Enter your body height</string>
     <string name="analyze">Analyze</string>
     <string name="input_email">Your email has not been filled in</string>
     <string name="input_password">Your password has not been filled in</string>
     <string name="welcome_back">Welcome back</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="invalid_username">Minimum 5 characters</string>
     <string name="action_logout">Log Out</string>
@@ -53,4 +51,21 @@
     <string name="settings">Settings</string>
     <string name="languages">Languages</string>
     <string name="are_your_sure">Are you sure?</string>
+    <string name="water_consumption">Water Consumption (liter)</string>
+    <string name="phisical_activity">Phisical Activity (day)</string>
+    <string name="drinking_input">Drinking Input</string>
+    <string name="set_daily_reminder">Set Daily Reminder</string>
+    <string name="sounds">Sounds</string>
+    <string name="vibrate">Vibrate</string>
+    <string name="description_add">"Add "</string>
+    <string name="_1_men">1 = Men</string>
+    <string name="_2_women">2 = Women</string>
+    <string name="enter_your_gender">Enter your gender</string>
+    <string name="enter_your_water_consumption">Enter your water consumption</string>
+    <string name="_0_no_activity">0 = No Activity</string>
+    <string name="_1_light">1= Light</string>
+    <string name="_2_moderate">2 = Moderate</string>
+    <string name="_3_heavy">3 = Heavy</string>
+    <string name="enter_your_activity">Enter your activity</string>
+    <string name="prediction_history">Prediction History</string>
 </resources>

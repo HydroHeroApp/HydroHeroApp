@@ -27,20 +27,20 @@ class LoginPrefsRepo private constructor (private val dataStore: DataStore<Prefe
 
     suspend fun logout() {
         dataStore.edit { preferences ->
-            preferences[EMAIL_KEY] = ""
+            preferences[TOKEN_KEY] = ""
             preferences[STATE_KEY] = false
         }
     }
 
     fun getToken(): Flow<String?> {
         return dataStore.data.map { preferences ->
-            preferences[EMAIL_KEY]
+            preferences[TOKEN_KEY]
         }
     }
 
     suspend fun saveToken(token: String) {
         dataStore.edit { preferences ->
-            preferences[EMAIL_KEY] = token
+            preferences[TOKEN_KEY] = token
         }
     }
 
@@ -48,7 +48,7 @@ class LoginPrefsRepo private constructor (private val dataStore: DataStore<Prefe
         @Volatile
         private var INSTANCE: LoginPrefsRepo? = null
 
-        private val EMAIL_KEY = stringPreferencesKey("email")
+        private val TOKEN_KEY = stringPreferencesKey("token")
         private val  STATE_KEY = booleanPreferencesKey("state")
 
         fun getInstance(dataStore: DataStore<Preferences>): LoginPrefsRepo {

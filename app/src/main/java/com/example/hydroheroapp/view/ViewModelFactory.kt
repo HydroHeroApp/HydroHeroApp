@@ -8,6 +8,7 @@ import com.example.hydroheroapp.data.remote.repository.LoginPrefsRepo
 import com.example.hydroheroapp.di.Injection
 import com.example.hydroheroapp.view.login.LoginViewModel
 import com.example.hydroheroapp.view.main.MainViewModel
+import com.example.hydroheroapp.view.main.analyze.AnalyzeViewModel
 import com.example.hydroheroapp.view.register.RegisterViewModel
 
 class ViewModelFactory(private val authRepo: AuthRepo, private val preferences: LoginPrefsRepo): ViewModelProvider.NewInstanceFactory(){
@@ -23,6 +24,10 @@ class ViewModelFactory(private val authRepo: AuthRepo, private val preferences: 
         if (modelClass.isAssignableFrom(MainViewModel::class.java)) {
             return MainViewModel(preferences) as T
         }
+        if (modelClass.isAssignableFrom(AnalyzeViewModel::class.java)) {
+            return AnalyzeViewModel(authRepo) as T
+        }
+
         throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
     }
 
