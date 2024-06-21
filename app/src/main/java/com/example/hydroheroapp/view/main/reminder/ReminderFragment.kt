@@ -23,7 +23,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.hydroheroapp.R
+import com.example.hydroheroapp.data.ReminderReceiver
 import com.example.hydroheroapp.data.local.Reminder
+import com.example.hydroheroapp.data.local.adapter.ReminderAdapter
 import com.example.hydroheroapp.databinding.FragmentReminderBinding
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken

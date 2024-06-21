@@ -1,4 +1,4 @@
-package com.example.hydroheroapp.view.main.reminder
+package com.example.hydroheroapp.data.local.adapter
 
 import android.view.LayoutInflater
 import android.view.View

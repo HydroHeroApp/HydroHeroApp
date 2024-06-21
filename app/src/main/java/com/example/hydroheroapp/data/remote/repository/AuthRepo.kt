@@ -7,7 +7,6 @@ import com.example.hydroheroapp.data.remote.retrofit.ApiService
 import com.google.gson.Gson
 import retrofit2.HttpException
 import com.example.hydroheroapp.data.Result
-import com.example.hydroheroapp.data.remote.response.Analyze
 import com.example.hydroheroapp.data.remote.response.ModelResponse
 import com.example.hydroheroapp.data.remote.response.User
 

@@ -1,4 +1,4 @@
-package com.example.hydroheroapp.view.main.reminder
+package com.example.hydroheroapp.data
 
 import android.annotation.SuppressLint
 import android.app.NotificationManager
@@ -11,6 +11,7 @@ import android.widget.Switch
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationCompat
 import com.example.hydroheroapp.R
+import com.example.hydroheroapp.view.main.reminder.ReminderFragment
 
 class ReminderReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent) {
@@ -48,7 +49,8 @@ class ReminderReceiver : BroadcastReceiver() {
     @SuppressLint("UseSwitchCompatOrMaterialCode")
     private fun getSwitchState(context: Context, switchId: Int): Boolean {
         val activity = context as? AppCompatActivity ?: return true
-        val fragment = activity.supportFragmentManager.findFragmentByTag("ReminderFragment") as? ReminderFragment ?: return true
+        val fragment = activity.supportFragmentManager.findFragmentByTag("ReminderFragment") as? ReminderFragment
+            ?: return true
         val switch = fragment.view?.findViewById<Switch>(switchId)
         return switch?.isChecked ?: true
     }

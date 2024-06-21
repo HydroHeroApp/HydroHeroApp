@@ -1,4 +1,4 @@
-package com.example.hydroheroapp.view.customview
+package com.example.hydroheroapp.view.custoview
 
 import android.animation.ValueAnimator
 import android.app.AlertDialog

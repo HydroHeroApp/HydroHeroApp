@@ -1,4 +1,4 @@
-package com.example.hydroheroapp.view.main.reminder
+package com.example.hydroheroapp.data
 
 import android.annotation.SuppressLint
 import android.app.AlarmManager

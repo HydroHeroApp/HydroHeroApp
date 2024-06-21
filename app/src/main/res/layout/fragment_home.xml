@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     tools:context=".view.main.home.HomeFragment">
 
-    <com.example.hydroheroapp.view.customview.WaterIntakeView
+    <com.example.hydroheroapp.view.custoview.WaterIntakeView
         android:id="@+id/waterIntakeView"
         android:layout_width="200dp"
         android:layout_height="200dp"
